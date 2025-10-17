@@ -1,0 +1,259 @@
+:root {
+  --bg: #f9fafb;
+  --sidebar-bg: #f1f5f9;
+  --primary: #3b82f6;
+  --text: #111827;
+  --input-bg: #fff;
+  --message-sent: #3b82f6;
+  --message-received: #e5e7eb;
+}
+
+/* Dark mode */
+body.dark {
+  --bg: #1e293b;
+  --sidebar-bg: #0f172a;
+  --text: #000000;
+  --input-bg: #334155;
+  --message-sent: #2563eb;
+  --message-received: #d5e1f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition:  0.3s;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  height: 650px;
+  background: var(--input-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+}
+
+.profile-section {
+  text-align: center;
+  padding: 20px;
+  background: var(--primary);
+  color: white;
+  position: relative;
+}
+
+.theme-btn {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.search-box {
+  padding: 10px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+.contact-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contact:hover,
+.contact.active {
+  background: #dbeafe;
+}
+
+/* Chat area */
+.chat-wrapper {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  transition: 0.3s;
+}
+
+/* Header */
+.chat-header {
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* Chat messages */
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.sent {
+  align-self: flex-end;
+  background: var(--message-sent);
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.received {
+  align-self: flex-start;
+  background: var(--message-received);
+  color: var(--text);
+  border-bottom-left-radius: 5px;
+}
+
+.time {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-left: 8px;
+}
+
+.status {
+  font-size: 10px;
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  color: #4b5563;
+}
+
+/* Delete button */
+.delete-btn {
+  display: none;
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.message:hover .delete-btn {
+  display: block;
+}
+
+/* Typing indicator */
+.typing-indicator {
+  font-size: 12px;
+  color: gray;
+  margin-left: 20px;
+  display: none;
+}
+
+/* Input */
+.chat-input {
+  display: flex;
+  padding: 12px;
+  background: var(--input-bg);
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+}
+
+.chat-input button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chat-input button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .chat-wrapper {
+    width: 100%;
+  }
+}
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
