@@ -8,7 +8,7 @@
   --message-received: #e5e7eb;
 }
 
-/* Dark mode */
+
 body.dark {
   --bg: #1e293b;
   --sidebar-bg: #0f172a;
@@ -46,7 +46,7 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 30%;
   background: var(--sidebar-bg);
@@ -105,7 +105,7 @@ body {
   background: #dbeafe;
 }
 
-/* Chat area */
+
 .chat-wrapper {
   width: 70%;
   display: flex;
@@ -114,7 +114,7 @@ body {
   transition: 0.3s;
 }
 
-/* Header */
+
 .chat-header {
   background: var(--primary);
   color: white;
@@ -133,7 +133,7 @@ body {
   cursor: pointer;
 }
 
-/* Chat messages */
+
 .chat-messages {
   flex: 1;
   padding: 20px;
@@ -179,7 +179,6 @@ body {
   color: #4b5563;
 }
 
-/* Delete button */
 .delete-btn {
   display: none;
   position: absolute;
@@ -196,7 +195,7 @@ body {
   display: block;
 }
 
-/* Typing indicator */
+
 .typing-indicator {
   font-size: 12px;
   color: gray;
@@ -204,7 +203,7 @@ body {
   display: none;
 }
 
-/* Input */
+
 .chat-input {
   display: flex;
   padding: 12px;
@@ -236,7 +235,7 @@ body {
   opacity: 0.8;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .sidebar {
     display: none;
@@ -246,7 +245,7 @@ body {
     width: 100%;
   }
 }
-/* Animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
